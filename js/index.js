@@ -45,6 +45,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 const cta = siteContent["cta"];
 const main = siteContent["main-content"];
 const contact = siteContent["contact"];
+const nav = siteContent["nav"];
 
 // Global functions
 
@@ -61,11 +62,22 @@ function fillContent(data, listSelector, ...keys) {
   }
 }
 
-//                                              Task 1
+function createElement(type, text) {
+  const element = document.createElement(type);
+  element.textContent = text;
+  element.style.color = "green";
+  return element;
+}
+
+/***************************************************************Task 1*********************************************************/
 document.querySelector("#cta-img").src =  cta["img-src"];
 document.querySelector("#middle-img").src = main["middle-img-src"];
 
-//                                              Task 2
+
+/***************************************************************Task 2*********************************************************/
+
+// Fill navigation
+fillContent(nav, "nav a", "nav-item-1", "nav-item-2", "nav-item-3", "nav-item-4", "nav-item-5", "nav-item-6");
 
 // Fill cta section
 document.querySelector(".cta-text h1").textContent = cta["h1"]
@@ -84,6 +96,15 @@ fillContent(contact, ".contact p", "address", "phone", "email");
 
 // Fill footer
 document.querySelector("footer p").textContent = siteContent.footer.copyright;
+
+
+/***************************************************************Task 3*********************************************************/                                              
+document.querySelectorAll("nav a").forEach(a =>  a.style.color = "green");
+const navElement = document.querySelector("nav");
+navElement.appendChild(createElement("a","More"));
+navElement.prepend(createElement("a","Home"));
+
+
 
 
 
