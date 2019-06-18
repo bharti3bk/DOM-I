@@ -40,3 +40,77 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// Global variables
+const cta = siteContent["cta"];
+const main = siteContent["main-content"];
+const contact = siteContent["contact"];
+const nav = siteContent["nav"];
+
+// Global functions
+
+function fillContent(data, listSelector, ...keys) {
+  const list = document.querySelectorAll(listSelector);
+
+  if(keys.length != list.length) {
+    console.log("keys length does not match with list length");
+    return;
+  }
+
+  for(var i = 0 ; i < keys.length; i++) {
+    list[i].textContent = data[keys[i]];
+  }
+}
+
+function createElement(type, text) {
+  const element = document.createElement(type);
+  element.textContent = text;
+  element.style.color = "green";
+  return element;
+}
+
+/***************************************************************Task 1*********************************************************/
+document.querySelector("#cta-img").src =  cta["img-src"];
+document.querySelector("#middle-img").src = main["middle-img-src"];
+
+
+/***************************************************************Task 2*********************************************************/
+
+// Fill navigation
+fillContent(nav, "nav a", "nav-item-1", "nav-item-2", "nav-item-3", "nav-item-4", "nav-item-5", "nav-item-6");
+
+// Fill cta section
+document.querySelector(".cta-text h1").textContent = cta["h1"]
+document.querySelector(".cta-text button").textContent = cta["button"]
+
+// Fill main section
+fillContent(main, ".top-content .text-content h4", "features-h4", "about-h4");
+fillContent(main, ".top-content .text-content p", "features-content", "about-content");
+
+fillContent(main, ".bottom-content .text-content h4", "services-h4", "product-h4", "vision-h4");
+fillContent(main, ".bottom-content .text-content p", "services-content", "product-content", "vision-content");
+
+// Fill contact section
+document.querySelector(".contact h4").textContent = contact["contact-h4"]
+fillContent(contact, ".contact p", "address", "phone", "email");
+
+// Fill footer
+document.querySelector("footer p").textContent = siteContent.footer.copyright;
+
+
+/***************************************************************Task 3*********************************************************/                                              
+document.querySelectorAll("nav a").forEach(a =>  a.style.color = "green");
+const navElement = document.querySelector("nav");
+navElement.appendChild(createElement("a","More"));
+navElement.prepend(createElement("a","Home"));
+
+
+
+
+
+
+
+
+
+
+
