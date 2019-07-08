@@ -90,4 +90,10 @@ fillContent(main, ".top-content .text-content p", "features-content", "about-con
 fillContent(main, ".bottom-content .text-content h4", "services-h4", "product-h4", "vision-h4");
 fillContent(main, ".bottom-content .text-content p", "services-content", "product-content", "vision-content");
 
+// Fill contact section
+document.querySelector(".contact h4").textContent = contact["contact-h4"]
+fillContent(contact, ".contact p", "address", "phone", "email");
+
+// Fill footer
+document.querySelector("footer p").textContent = siteContent.footer.copyright;
 
