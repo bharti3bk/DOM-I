@@ -74,3 +74,20 @@ document.querySelector("#cta-img").src =  cta["img-src"];
 document.querySelector("#middle-img").src = main["middle-img-src"];
 
 
+/*Task 2 */
+
+// Fill navigation
+fillContent(nav, "nav a", "nav-item-1", "nav-item-2", "nav-item-3", "nav-item-4", "nav-item-5", "nav-item-6");
+
+// Fill cta section
+document.querySelector(".cta-text h1").textContent = cta["h1"]
+document.querySelector(".cta-text button").textContent = cta["button"]
+
+// Fill main section
+fillContent(main, ".top-content .text-content h4", "features-h4", "about-h4");
+fillContent(main, ".top-content .text-content p", "features-content", "about-content");
+
+fillContent(main, ".bottom-content .text-content h4", "services-h4", "product-h4", "vision-h4");
+fillContent(main, ".bottom-content .text-content p", "services-content", "product-content", "vision-content");
+
+
