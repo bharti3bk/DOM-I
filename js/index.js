@@ -97,3 +97,8 @@ fillContent(contact, ".contact p", "address", "phone", "email");
 // Fill footer
 document.querySelector("footer p").textContent = siteContent.footer.copyright;
 
+/*Task 3 */                                   
+document.querySelectorAll("nav a").forEach(a =>  a.style.color = "green");
+const navElement = document.querySelector("nav");
+navElement.appendChild(createElement("a","More"));
+navElement.prepend(createElement("a","Home"));
