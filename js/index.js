@@ -69,12 +69,12 @@ function createElement(type, text) {
   return element;
 }
 
-/***************************************************************Task 1*********************************************************/
+/*Task 1 */
 document.querySelector("#cta-img").src =  cta["img-src"];
 document.querySelector("#middle-img").src = main["middle-img-src"];
 
 
-/***************************************************************Task 2*********************************************************/
+/*Task 2 */
 
 // Fill navigation
 fillContent(nav, "nav a", "nav-item-1", "nav-item-2", "nav-item-3", "nav-item-4", "nav-item-5", "nav-item-6");
@@ -97,20 +97,8 @@ fillContent(contact, ".contact p", "address", "phone", "email");
 // Fill footer
 document.querySelector("footer p").textContent = siteContent.footer.copyright;
 
-
-/***************************************************************Task 3*********************************************************/                                              
+/*Task 3 */                                   
 document.querySelectorAll("nav a").forEach(a =>  a.style.color = "green");
 const navElement = document.querySelector("nav");
 navElement.appendChild(createElement("a","More"));
 navElement.prepend(createElement("a","Home"));
-
-
-
-
-
-
-
-
-
-
-
